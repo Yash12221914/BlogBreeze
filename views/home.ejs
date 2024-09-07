@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>BlogBreeze</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/create">Create New Post</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <% if (posts.length === 0) { %>
+      <p>No posts yet! <a href="/create">Create one</a> to get started.</p>
+    <% } else { %>
+      <% posts.forEach((post, index) => { %>
+        <div class="post-preview">
+          <h2><a href="/post/<%= index %>"><%= post.title %></a></h2>
+          <p><%= post.content.substring(0, 100) %>...</p>
+          <a href="/post/<%= index %>">View Post</a> |
+          <a href="/edit/<%= index %>">Edit</a> |
+          <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      <% }); %>
+    <% } %>
+  </div>
+
+  <footer>
+    <p>Blog Application &copy; 2024 by YASH</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= post.title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= post.title %></h1>
+  </header>
+
+  <div class="container">
+    <p><%= post.content %></p>
+    <a href="/edit/<%= id %>">Edit</a> |
+    <form action="/delete/<%= id %>" method="POST" style="display:inline;">
+      <button type="submit">Delete</button>
+    </form> |
+    <a href="/">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>Blog Application &copy; 2024 by YASH</p>
+  </footer>
+</body>
+</html>

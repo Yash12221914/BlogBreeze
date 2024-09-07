@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Post</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Edit Post</h1>
+  </header>
+
+  <div class="container">
+    <form action="/edit/<%= id %>" method="POST">
+      <input type="text" name="title" value="<%= post.title %>" required>
+      <textarea name="content" required><%= post.content %></textarea>
+      <button type="submit">Update Post</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Blog Application &copy; 2024 by YASH</p>
+  </footer>
+</body>
+</html>
